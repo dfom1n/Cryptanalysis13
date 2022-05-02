@@ -33,7 +33,6 @@ public class Cryptoanalizer {
         } else {
             System.out.println("Запустите программу заново");
             System.out.println("И введите число от 1 до 3");
-            System.out.println("И введите число от 1 до 3");
         }
     }
 }
