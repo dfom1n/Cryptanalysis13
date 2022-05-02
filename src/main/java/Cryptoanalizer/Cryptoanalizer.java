@@ -1,11 +1,11 @@
-package Cryptanalysis13;
+package Cryptoanalizer;
 
 import java.io.IOException;
 import java.util.Scanner;
 
-import static Cryptanalysis13.Encryptor.*;
+import static Cryptoanalizer.Encryptor.*;
 
-public class Cryptanalysis {
+public class Cryptoanalizer {
     public static void main(String[] args) throws IOException {
         System.out.println("Здравствуйте");
         System.out.println("Меня зовут JavaRush, я лучший в критографии");

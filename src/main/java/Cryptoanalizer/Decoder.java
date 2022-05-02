@@ -1,4 +1,4 @@
-package Cryptanalysis13;
+package Cryptoanalizer;
 
 import java.io.*;
 import java.util.ArrayList;
