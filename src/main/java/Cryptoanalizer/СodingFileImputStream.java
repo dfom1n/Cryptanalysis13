@@ -50,6 +50,7 @@ public class СodingFileImputStream {
                         }
                         String letter = ARR_LOWER_LETTER.get(numberLetter);
                         listOut.add(letter);
+                        System.out.println("keyCrypt "+keyCrypt);
                     }
                 else {
                         System.out.println("Извените! В настоящее время я умею обрабатывать русские буквы и знаки припенанияю");

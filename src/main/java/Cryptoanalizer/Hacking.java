@@ -13,43 +13,11 @@ public class Hacking {
         Map<String, Integer> stringMapCheck = new HashMap<>();
         List<Map.Entry<String, Integer>> valuesListCheck = null;
         String letterTopInTextCheck = null;
-        int keyCrypt = 0;
+
         FilePath filePath = new FilePath();
         String filePathInput = filePath.getFilePathInput();
         String filePathOutput = filePath.getFilePathOutput();
-
-        try (FileInputStream fileInputStream = new FileInputStream(filePathInput);
-             BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(fileInputStream))) {
-            String strIn;
-            while ((strIn = bufferedReader.readLine()) != null) {
-
-                ConstructorArrayCharToString arrStrings = new ConstructorArrayCharToString(strIn);
-
-
-                for (String string : arrStrings.getArrStrings()) {
-                    if (stringMap.containsKey(string)) {
-                        stringMap.put(string, stringMap.get(string) + 1);
-                    } else {
-                        stringMap.put(string, 1);
-                    }
-                }
-                valuesList = new ArrayList(stringMap.entrySet());
-                Collections.sort(valuesList, new Comparator<Map.Entry<String, Integer>>() {
-                    @Override
-                    public int compare(Map.Entry<String, Integer> o1, Map.Entry<String, Integer> o2) {
-                        return o1.getValue().compareTo(o2.getValue());
-                    }
-                });
-                String letterTopInText = valuesList.get(valuesList.size() - 1).getKey();
-                int indexLetterTopInTextInArr = 0;
-                int indexLetterTopRussian = 0;
-                if (ARR_LOWER_LETTER.contains(letterTopInText)) {
-                    indexLetterTopInTextInArr = ARR_LOWER_LETTER.indexOf(letterTopInText);
-                    indexLetterTopRussian = ARR_LOWER_LETTER.indexOf(ARR_STATISTIC.get(0));
-                }
-                keyCrypt = Math.abs(ARR_LOWER_LETTER.size()) - Math.abs(indexLetterTopInTextInArr - indexLetterTopRussian);
-            }
-        }
+        int keyCrypt = HackingKey.hackingKey(filePath);
 
 //        try (FileInputStream fileInputStream = new FileInputStream(filePathInput);
 //             BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(fileInputStream))) {
@@ -58,26 +26,32 @@ public class Hacking {
 //
 //                ConstructorArrayCharToString arrStrings = new ConstructorArrayCharToString(strIn);
 //
-//                List<String> listIn = Arrays.asList(arrStrings.getArrStrings());
-//                List<String> listOut = new ArrayList<>(listIn.size());
-//                for (int i = 0; i < listIn.size(); i++) {
-//                    if (ARR_LOWER_LETTER.contains(listIn.get(i))) {
-//                        int number = ARR_LOWER_LETTER.indexOf(listIn.get(i));
-//                        int numberLetter;
-//                        if ((number - keyCrypt) >= 0 && (number - keyCrypt) < ARR_LOWER_LETTER.size()) {
-//                            numberLetter = number - keyCrypt;
-//                        } else {
-//                            numberLetter = Math.abs(ARR_LOWER_LETTER.size() - Math.abs(keyCrypt - number));
-//                        }
-//                        String letter = ARR_LOWER_LETTER.get(numberLetter);
-//                        listOut.add(letter);
+//
+//                for (String string : arrStrings.getArrStrings()) {
+//                    if (stringMap.containsKey(string)) {
+//                        stringMap.put(string, stringMap.get(string) + 1);
 //                    } else {
-//                        System.out.println("Извените! В настоящее время я умею обрабатывать русские буквы и знаки припенанияю");
-//                        System.out.println("Привидите файл в соответствие и запустите программу заного! До встречи!");
-//                        break;
+//                        stringMap.put(string, 1);
 //                    }
 //                }
-//                WritingToFile.writingToFile(filePath, listOut);
+//                valuesList = new ArrayList(stringMap.entrySet());
+//                Collections.sort(valuesList, new Comparator<Map.Entry<String, Integer>>() {
+//                    @Override
+//                    public int compare(Map.Entry<String, Integer> o1, Map.Entry<String, Integer> o2) {
+//                        return o1.getValue().compareTo(o2.getValue());
+//                    }
+//                });
+//                String letterTopInText = valuesList.get(valuesList.size() - 1).getKey();
+//                int indexLetterTopInTextInArr = 0;
+//                int indexLetterTopRussian = 0;
+//                if (ARR_LOWER_LETTER.contains(letterTopInText)) {
+//                    indexLetterTopInTextInArr = ARR_LOWER_LETTER.indexOf(letterTopInText);
+//                    indexLetterTopRussian = ARR_LOWER_LETTER.indexOf(ARR_STATISTIC.get(0));
+//                }
+//                keyCrypt = Math.abs(ARR_LOWER_LETTER.size()) - Math.abs(indexLetterTopInTextInArr - indexLetterTopRussian);
+//            }
+//        }
+        HackingKey.hackingKey(filePath);
         СodingFileImputStream.codingFileImputStream(filePath,"hacking", keyCrypt);
 
 
