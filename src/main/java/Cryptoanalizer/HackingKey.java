@@ -16,10 +16,7 @@ public class HackingKey {
              BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(fileInputStream))) {
             String strIn;
             while ((strIn = bufferedReader.readLine()) != null) {
-
                 ConstructorArrayCharToString arrStrings = new ConstructorArrayCharToString(strIn);
-
-
                 for (String string : arrStrings.getArrStrings()) {
                     if (stringMap.containsKey(string)) {
                         stringMap.put(string, stringMap.get(string) + 1);
@@ -46,8 +43,6 @@ public class HackingKey {
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
-        System.out.println("keyCrypt "+keyCrypt);
-        System.out.println(456%ARR_LOWER_LETTER.size());
     return keyCrypt;
     }
 }
