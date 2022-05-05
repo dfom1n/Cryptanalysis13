@@ -11,7 +11,7 @@ public class WritingToFile {
 
         String filePathOutput = filePath.getFilePathOutput();
         try (FileOutputStream fileOutputStream = new FileOutputStream(filePathOutput, true);
-                BufferedWriter bufferedWriter = new BufferedWriter(new OutputStreamWriter(fileOutputStream))) {
+             BufferedWriter bufferedWriter = new BufferedWriter(new OutputStreamWriter(fileOutputStream))) {
             for (String s : listOut) {
                 bufferedWriter.write(s);
             }
@@ -19,6 +19,5 @@ public class WritingToFile {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
     }
 }
