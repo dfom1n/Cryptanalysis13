@@ -15,16 +15,18 @@ public class Decoder {
         String filePathInput = filePath.getFilePathInput();
         String filePathOutput = filePath.getFilePathOutput();
         try (FileInputStream fileInputStream = new FileInputStream(filePathInput);
-             BufferedReader bufferedReader = new BufferedReader(
-                     new InputStreamReader(fileInputStream))) {
+             BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(fileInputStream))) {
             String strIn;
             while ((strIn = bufferedReader.readLine()) != null) {
-                char[] chars = strIn.toLowerCase().toCharArray();
-                String[] strings = new String[chars.length];
-                for (int i = 0; i < chars.length; i++) {
-                    strings[i] = String.valueOf(chars[i]);
-                }
-                List<String> listIn = Arrays.asList(strings);
+//                char[] chars = strIn.toLowerCase().toCharArray();
+//                String[] strings = new String[chars.length];
+//                for (int i = 0; i < chars.length; i++) {
+//                    strings[i] = String.valueOf(chars[i]);
+//                }
+
+                ConstructorArrayCharToString arrStrings = new ConstructorArrayCharToString(strIn);
+
+                List<String> listIn = Arrays.asList(arrStrings.getArrStrings());
                 List<String> listOut = new ArrayList<>(listIn.size());
 
                 for (int i = 0; i < listIn.size(); i++) {
@@ -46,18 +48,11 @@ public class Decoder {
                     }
                 }
                 WritingToFile.writingToFile(filePath, listOut);
-//                try (FileOutputStream fileOutputStream = new FileOutputStream(filePathOutput, true);
-//                     BufferedWriter bufferedWriter = new BufferedWriter(new OutputStreamWriter(fileOutputStream))) {
-//                    for (String s : listOut) {
-//                        bufferedWriter.write(s);
-//                    }
-//                    bufferedWriter.newLine();
-//                }
             }
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
-//        System.out.println("Готово! Возвращайся если понадобится помощь в криптографии!");
+        System.out.println("Готово! Возвращайся если понадобится помощь в криптографии!");
     }
 }
 

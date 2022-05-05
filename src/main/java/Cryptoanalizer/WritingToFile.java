@@ -19,6 +19,6 @@ public class WritingToFile {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        System.out.println("Готово! Возвращайся если понадобится помощь в криптографии!");
+
     }
 }
