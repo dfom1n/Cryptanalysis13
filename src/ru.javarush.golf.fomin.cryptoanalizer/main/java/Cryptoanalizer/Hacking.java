@@ -1,7 +1,6 @@
 package Cryptoanalizer;
 
 import java.io.*;
-import java.util.*;
 
 public class Hacking {
     public static void hacking() throws IOException {

@@ -1,8 +1,5 @@
 package Cryptoanalizer;
 
-import java.io.*;
-import java.util.*;
-
 public class Encryptor {
     public static void encrypt() {
         KeyCrypt keyCryptEncryptor = new KeyCrypt();

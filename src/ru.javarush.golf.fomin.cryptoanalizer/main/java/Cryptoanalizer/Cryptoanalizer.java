@@ -3,8 +3,6 @@ package Cryptoanalizer;
 import java.io.IOException;
 import java.util.Scanner;
 
-import static Cryptoanalizer.Encryptor.*;
-
 public class Cryptoanalizer {
     public static void main(String[] args) throws IOException {
         boolean isWorked = true;

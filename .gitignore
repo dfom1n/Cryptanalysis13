@@ -1,6 +1,9 @@
-.idea
-src/main/java/Cryptoanalizer/Cryptanalys.java
-target
-src/main/java/Support
-src/main/resources
+.idea/
+src/ru.javarush.golf.fomin.cryptoanalizer/main/java/Cryptoanalizer/Cryptanalys.java
+target/
+src/ru.javarush.golf.fomin.cryptoanalizer/main/java/Support
+src/ru.javarush.golf.fomin.cryptoanalizer/main/resources
 pom.xml
+out
+*.iml
+*.class
